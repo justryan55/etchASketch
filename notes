@@ -1,0 +1,22 @@
+
+
+
+Create a 16x16 grid of square grids 
+    - create the divs using javascript
+    - put grid squares inside another 'container' div (can go directly in the HTML)
+    - use flexbox to make divs appear as a grid 
+
+Set up a 'hover' effect so the grid divs change colour when your mouse passes over them
+    - 'hovering' occurs when your mouse enters a div and ends when your mouse leaves it 
+        - can set up event listeners for either of those points as a starting point
+    
+Add button that prompts user to select grid side
+    - this should remove existing grid and a new grid should be generated in the same total space 
+
+
+
+Buttons - grid size, resize, clear
+
+
+
+
