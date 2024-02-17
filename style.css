@@ -4,17 +4,67 @@
 }
 
 body {
-    background-color: palegreen;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 #container {
     display: flex;
     flex-wrap: wrap;
     background-color: white;
-    margin: 100px auto;
+    margin: 50px auto;
+    border: 1px black solid;
+}
+
+.buttons {
+        display: flex;
+        justify-content: center;    
+    }
+
+.buttons button, .color {
+    margin: 10px;
+    width: 4rem;
+}
+
+#resizeBtn {
+    width: 8rem;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    }
 }
 
 .cell {
     margin: 1px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer img {
+    height: 50px;
+}
+
+input[type="color"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#clear {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
 }
 
