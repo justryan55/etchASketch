@@ -1,4 +1,3 @@
-
 const sketchpad = document.getElementById("container");
 const userColour = document.getElementById("color");
 const resize = document.getElementById("resizeBtn");
@@ -17,15 +16,16 @@ function gridSize(){
         alert("Please enter a value between 2 and 100");
         result = prompt("Please enter the size that you would like the grid");
     }
-        rows = parseInt(result);
-        cols = parseInt(result);
-        clearGrid(); 
-        createGridCells();
-        selectColour();
-    }
+
+    rows = parseInt(result);
+    cols = parseInt(result);
+    clearGrid(); 
+    createGridCells();
+    selectColour();
+}
  
 
- function clearGrid() {
+function clearGrid() {
     divElements.forEach(div => {
         sketchpad.removeChild(div);
     });
@@ -41,18 +41,31 @@ function createGridCells(){
         sketchpad.appendChild(div);
         divElements.push(div);   
     }
-    
 }
+
+let mouseIsDown = false;
+sketchpad.addEventListener('mousedown', () => {
+    mouseIsDown = true;
+});
+
+sketchpad.addEventListener('mouseup', () => {
+    mouseIsDown = false;
+});
 
 function selectColour(){
     divElements.forEach(div => {
         div.addEventListener("mouseover", () => {
+            // only draw, if we've previously clicked, and we haven't 'unclicked'
+            if (mouseIsDown) {
+                div.style.backgroundColor = userColour.value;
+            }
+        })
+
+        div.addEventListener("mousedown", () => {
             div.style.backgroundColor = userColour.value;
         })
     })
-
-    }
-
+}
  
 resize.addEventListener("click", gridSize)
 clear.addEventListener("click", () => {
