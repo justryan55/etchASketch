@@ -33,13 +33,9 @@ body {
 }
 
 #resizeBtn {
-    width: 8rem;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
-    }
+    width: 6rem;
 }
+
 
 .cell {
     margin: 1px;
@@ -59,12 +55,31 @@ input[type="color"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: white;
+    cursor: pointer;
+}
+
+.buttons button {
+    background-color: white;
+    color: black; 
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover{
+    background-color: #ccc; 
+}
+
+input[type="color"]:hover {
+    background-color: #ccc; 
 }
 
 #clear {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
+    background-color: #dc3545;
+    color: white;
 }
 
+#clear:hover {
+    background-color: #c82333; 
+}
