@@ -33,6 +33,7 @@ function gridSize(){
     clearGrid(); 
     createGridCells();
     selectColour();
+    gridStates = [];
 }
  
 function clearGrid() {
@@ -40,6 +41,7 @@ function clearGrid() {
         sketchpad.removeChild(div);
     });
     divElements = [];
+    gridStates = [];
 }
 
 function createGridCells(){
@@ -122,10 +124,23 @@ function saveData(){
 }
 
 function loadData(){
-    let divElements = JSON.parse(localStorage.getItem('savedDrawing'));
-    let cols = JSON.parse(localStorage.getItem('savedCols'));
-    let rows = JSON.parse(localStorage.getItem('savedRows'));
-    
+    console.log("Loading data...");
+    if (localStorage.getItem('savedDrawing') !== null){
+        const savedDivs = JSON.parse(localStorage.getItem('savedDrawing'));
+        const savedCols = JSON.parse(localStorage.getItem('savedCols'));
+        const savedRows = JSON.parse(localStorage.getItem('savedRows'));
+        
+        clearGrid();
+        cols = savedCols;
+        rows = savedRows;
+        createGridCells();
+
+        savedDivs.forEach((color, index) => {
+            divElements[index].style.backgroundColor = color;
+        })
+        
+    }
+
 }
 
 save.addEventListener('click', saveData);
