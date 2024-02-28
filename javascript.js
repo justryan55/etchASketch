@@ -110,3 +110,23 @@ selectColour()
 gridSize()
 
 
+function saveData(){
+    if (typeof(Storage) !== "undefined"){
+        localStorage.setItem('savedDrawing', JSON.stringify(divElements));
+        localStorage.setItem('savedCols', JSON.stringify(cols));
+        localStorage.setItem('savedRows', JSON.stringify(rows));
+        alert('Data saved successfully');
+    } else {
+        alert('Local storage is not supported in this browser.')
+    }
+}
+
+function loadData(){
+    let divElements = JSON.parse(localStorage.getItem('savedDrawing'));
+    let cols = JSON.parse(localStorage.getItem('savedCols'));
+    let rows = JSON.parse(localStorage.getItem('savedRows'));
+    
+}
+
+save.addEventListener('click', saveData);
+load.addEventListener('click', loadData);
