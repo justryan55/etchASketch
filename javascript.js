@@ -37,6 +37,15 @@ function gridSize(){
     draw();
     gridStates = [];
 }
+
+function captureGridState() {
+    const currentState = [];
+    divElements.forEach(div => {
+        currentState.push(div.style.backgroundColor);
+    });
+    gridStates.push(currentState);
+}
+
  
 function clearGrid() {
     divElements.forEach(div => {
@@ -105,10 +114,12 @@ function draw(){
     divElements.forEach(div => {
         div.addEventListener("mouseover", () => {
             if (mouseIsDown) {
+                captureGridState();
                 div.style.backgroundColor = userColour.value;
             }
         })
         div.addEventListener("mousedown", () => {
+            captureGridState();
             div.style.backgroundColor = userColour.value;
         })
     })
@@ -121,8 +132,6 @@ sketchpad.addEventListener('mousedown', () => {
 sketchpad.addEventListener('mouseup', () => {
     mouseIsDown = false;
 });
-
-resize.addEventListener("click", gridSize);
 
 clear.addEventListener("click", () => {
     clearGrid();
