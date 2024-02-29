@@ -1,6 +1,6 @@
 const sketchpad = document.getElementById("container");
 const userColour = document.getElementById("color");
-const resize = document.getElementById("resizeBtn");
+const resize = document.getElementById("resize");
 const clear = document.getElementById("clear");
 const undoBtn = document.getElementById("undo");
 const save = document.getElementById("save");
@@ -18,20 +18,8 @@ sketchpad.style.width = `${GridSize}px`;
 sketchpad.style.height = `${GridSize}px`;
 
 function gridSize(){
-    let result = prompt("Please enter the size that you would like the grid");
-    if (result === null){
-        result = 30;
-    } else {
-            while (isNaN(result) || result <= 1 || result >=101){
-                if (result === null){
-                    return;
-                }
-            alert("Please enter a value between 2 and 100");
-            result = prompt("Please enter the size that you would like the grid");
-    }
-    }
-    rows = parseInt(result);
-    cols = parseInt(result);
+    rows = resize.value;
+    cols = resize.value;
     clearGrid(); 
     createGridCells();
     draw();
@@ -122,8 +110,6 @@ sketchpad.addEventListener('mouseup', () => {
     mouseIsDown = false;
 });
 
-resize.addEventListener("click", gridSize);
-
 clear.addEventListener("click", () => {
     clearGrid();
     createGridCells();
@@ -133,6 +119,8 @@ clear.addEventListener("click", () => {
 undoBtn.addEventListener("click", undo);
 save.addEventListener('click', saveData);
 load.addEventListener('click', loadData);
+
+resize.addEventListener('input', gridSize);
 
 createGridCells()
 draw()
