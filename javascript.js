@@ -93,10 +93,14 @@ function draw(){
     divElements.forEach(div => {
         div.addEventListener("mouseover", () => {
             if (mouseIsDown) {
+                const currentState = divElements.map(div => div.style.backgroundColor);
+                gridStates.push(currentState); 
                 div.style.backgroundColor = userColour.value;
             }
         })
         div.addEventListener("mousedown", () => {
+            const currentState = divElements.map(div => div.style.backgroundColor);
+            gridStates.push(currentState); 
             div.style.backgroundColor = userColour.value;
         })
     })
