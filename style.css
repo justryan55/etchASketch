@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     background-color: white;
-    margin: 50px auto;
+    margin: 30px auto;
     border: 1px black solid;
 }
 
@@ -35,7 +35,6 @@ body {
 #resizeBtn {
     width: 6rem;
 }
-
 
 .cell {
     margin: 1px;
@@ -82,4 +81,10 @@ input[type="color"]:hover {
 
 #clear:hover {
     background-color: #c82333; 
+}
+
+#text {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
