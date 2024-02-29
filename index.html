@@ -13,16 +13,17 @@
     </header>
     <div class="sketchpad" id="container"></div>
     <p id="text"></p>
+    <div class="user-inputs">
+            <label for="resize">
+            <input type="range" id="resize" min="2" max="100" value="30"></input>
+            </label>    
+            <label for="color">
+            <input type="color" id="color" name="color">
+            </label>
+    </div>
     <div class="buttons">
         <button id="clear">Clear</button>
         <button id="undo">Undo</button>
-        <label for="resizeBtn">
-        <input type="range" id="resizeBtn" min="2" max="100" value="30"></input>
-        </label>
-        <div class="color">
-            <label for="color"></label>
-            <input type="color" id="color" name="color">
-        </div>
         <button id="save">Save</button>
         <button id="load">Load</button>
     </div>
@@ -33,5 +34,4 @@
     </footer>
 <script src="javascript.js"></script>
 </body>
-
 </html>
