@@ -78,7 +78,7 @@ function loadData(){
         cols = savedCols;
         rows = savedRows;
         createGridCells();
-
+        draw();
         markedCells.forEach((marked, index) => {
             if (marked) {
                 divElements[index].style.backgroundColor = userColour.value;
