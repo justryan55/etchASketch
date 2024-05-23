@@ -3,9 +3,11 @@
 A simple Etch-a-Sketch application built using Vanilla JS.
 
 ## Table of Contents
-- Introduction
-- Getting Started
-- Features
+
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Features](#features)
+
   
 ## Introduction
 
